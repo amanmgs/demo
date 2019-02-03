@@ -1,0 +1,43 @@
+<dom-module id = "social-element">  
+   <template>  
+      <style >
+      .action-button {
+   width: 100px;
+   background: #27AE60;
+   font-weight: bold;
+   color: white;
+   border: 0 none;
+   border-radius: 1px;
+   cursor: pointer;
+   padding: 10px 5px;
+   margin: 10px 5px ;
+
+      }
+        input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+      </style>
+    <h2 class="fs-title">Social Profiles</h2>
+    <h3 class="fs-subtitle">Your presence on the social network</h3>
+    <input type="text" name="twitter" placeholder="Twitter" oninput="this.className = ''"/>
+    <input type="text" name="facebook" placeholder="Facebook" oninput="this.className = ''"/>
+    <input type="text" name="gplus" placeholder="Google Plus" oninput="this.className = ''"/>
+    <button class="action-button" onclick="prev();"> prev</button>
+    <button class="action-button" onclick="next();">next</button> 
+   </template>  
+   <script>  
+      HTMLImports.whenReady(function(){  
+         Polymer ({  
+            is: "social-element"  
+         })  
+      })    
+   </script>  
+</dom-module>  

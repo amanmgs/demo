@@ -1,0 +1,44 @@
+<dom-module id = "personal-element">  
+   <template>  
+      <style >
+      .action-button {
+   width: 100px;
+   background: #27AE60;
+   font-weight: bold;
+   color: white;
+   border: 0 none;
+   border-radius: 1px;
+   cursor: pointer;
+   padding: 10px 5px;
+   margin: 10px 5px;
+
+      }
+        input, textarea {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+      </style>
+    <h2 class="fs-title">Personal Details</h2>
+    <h3 class="fs-subtitle">We will never sell it</h3>
+    <input type="text" name="fname" placeholder="First Name" />
+    <input type="text" name="lname" placeholder="Last Name" />
+    <input type="text" name="phone" placeholder="Phone" />
+    <textarea name="address" placeholder="Address"></textarea>
+    <button class="action-button" onclick="prev();"> prev</button>
+    <button class="action-button" onclick="submit();">Submit</button> 
+  </template>  
+   <script>  
+      HTMLImports.whenReady(function(){  
+         Polymer ({  
+            is: "personal-element"  
+         })  
+      })    
+   </script>  
+</dom-module>  

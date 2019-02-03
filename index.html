@@ -1,0 +1,103 @@
+<!doctype html>  
+<html lang = "en">  
+   <head>  
+      <title>Registration Form</title>  
+      <script src = "bower_components/webcomponentsjs/webcomponents-lite.js"></script>  
+      <link rel = "import" href = "bower_components/polymer/polymer.html">  
+      <link rel = "import" href = "define-element.html"> 
+      <link rel = "import" href = "account.html"> 
+      <link rel = "import" href = "social.html"> 
+      <link rel = "import" href = "personal.html"> 
+      <script src="jquery-3.3.1.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+
+      <style>
+            .regform{
+      	display: none;
+      	width: 400px;
+	    margin: 50px auto;
+	    text-align: center;
+	    position: relative;
+      }
+      .active
+      {
+      	display: none;
+      }
+      .msg
+      {
+      	text-align-last: center;
+      }
+      </style>
+
+   </head>   
+   <body>
+   	<ul id="progressbar">
+    <li class="active">Account Setup</li>
+    <li class="active">Social Profiles</li>
+    <li class="active">Personal Details</li>
+  </ul>
+   	<div class="regform">
+      <account-element></account-element> 
+
+    </div>
+    <div class="regform">   
+      <social-element></social-element>
+    </div>
+    <div class="regform">  
+      <personal-element></personal-element>
+    </div>
+    <div class="msg">
+    	<define-element></define-element>
+    </div>  	
+    <script>
+    	var visibleform=0;
+    	var visibleli=0;
+
+    	function showform(){
+    		$(".msg").hide();
+    		$(".regform").hide();
+    		$(".regform:eq("+ visibleform +")").show();
+    		$(".active:eq("+visibleli+")").show();
+    		    	}
+
+    	showform();
+
+    	function next()
+    	{
+    		if (visibleform==$(".regform").length-1) {
+    			visibleform = 0;
+    			visibleli = 0;
+       		}
+       		else{
+       			visibleform++;
+       			visibleli++;
+
+       		}
+       		showform();
+    	}
+        
+        function prev(){
+        	if (visibleform==0) {
+    			visibleform==$(".regform").length-1;
+    			visibleli==$(".active").length-1;
+       		}
+       		else{
+       			visibleform--;
+       			visibleli--;
+       		}
+       		showform();
+
+        }
+
+        function submit(){
+        	alert("ARE YOU SURE");
+        	$(".regform").hide();
+        	$(".active").hide();
+        	$(".msg").show();
+        	}
+        
+
+    </script>
+   </body>  
+</html>

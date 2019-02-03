@@ -1,0 +1,43 @@
+<dom-module id = "account-element">  
+      <template>  
+         <style >
+         .action-button {
+  width: 100px;
+  background: #27AE60;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px ;
+
+      }
+        input {
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 13px;
+}
+      </style>
+    <h2 class="fs-title">Create your account</h2>
+    <h3 class="fs-subtitle">This is step 1</h3>
+    <input type="text" name="email" placeholder="Email" /><br>
+    <input type="password" name="pass" placeholder="Password" /><br>
+    <input type="password" name="cpass" placeholder="Confirm Password" /><br>
+    <button class="action-button" onclick="prev();"> prev</button>
+    <button class="action-button" onclick="next();">next</button> 
+   </template>  
+   <script>  
+      HTMLImports.whenReady(function(){  
+         Polymer ({  
+            is: "account-element"  
+         })  
+      })    
+   </script>  
+</dom-module>  
